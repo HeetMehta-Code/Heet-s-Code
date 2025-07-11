@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #205cca;
+            display: flex;
+            justify-content: center;
+            background-image: url("c.jpg");
+            background-size: 300px;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 400px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            border: 2px solid black;
+        }
+
+        .chat-box {
+            flex-grow: 1;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            height: 300px;
+            margin-bottom: 10px;
+            border: 2px solid black;
+        }
+
+        .chat-box div {
+            margin-bottom: 10px;
+        }
+
+        .chat-box .user {
+            text-align: right;
+            color: #007bff;
+            font-size: 20px;
+        }
+
+        .chat-box .receiver {
+            text-align: left;
+            color: #28a745;
+            font-size: 20px;
+        }
+
+        .input-box {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .input-box input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            border: 2px solid black;
+        }
+
+        .input-box button {
+            padding: 10px;
+            margin-left: 10px;
+            background-color: #0000aa;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid black;
+            font-family: Arial;
+            font-size: 20px;
+        }
+
+        .input-box button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="chat-box" id="chat-box">
+        </div>
+
+        <div class="input-box">
+            <input type="text" id="msg" placeholder="Type a message..." />
+            <button onclick="sender()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const response = [
+            "Namaste Bhai...",
+            "NO no I am well, what about you",
+            "Can we go for watch movie?",
+            "Tomorrow",
+            "Sector-16"
+        ];
+
+        function sender() {
+            var msg = document.getElementById("msg").value;
+
+            if (msg == "") {
+                alert("Please enter a message.");
+                return;
+            }
+
+            var chatBox = document.getElementById("chat-box");
+
+            var msgElement = document.createElement("div");
+            msgElement.classList.add("user");
+            msgElement.textContent = msg;
+            chatBox.appendChild(msgElement);
+
+            document.getElementById("msg").value = "";
+
+            setTimeout(() => {
+                var automsg = Math.floor(Math.random() * response.length);
+                var receiver = response[automsg];
+
+                var receiverElement = document.createElement("div");
+                receiverElement.classList.add("receiver");
+                receiverElement.textContent = receiver;
+                chatBox.appendChild(receiverElement);
+
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
