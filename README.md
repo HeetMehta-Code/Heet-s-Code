@@ -1,2 +1,2 @@
-# Heet-s-Code
+# Heet-Code
 Make by Heet Mehta
