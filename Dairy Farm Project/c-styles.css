@@ -1,0 +1,149 @@
+* {
+    font-family: "Arial";
+    color: rgb(36, 36, 65);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    background-color: #0990ca;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(230, 234, 245);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    z-index: 999;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 32px;
+    color: #001253;
+    margin: 0;
+    line-height: 1;
+}
+
+nav ul {
+    float: right;
+    margin-right: 0px;
+    padding: 0%;  
+    margin-left: 300px;
+
+
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 110px;
+    margin: 0 7px;
+}
+
+nav ul li a {
+    color: #001253;
+    padding: 9px;
+    border-radius: 3px;
+    font-size: 22px;
+}
+
+nav ul li a:hover {
+    background: black;
+    color: #fff;
+}
+
+.checkbtn {
+    font-size: 35px;
+    color: #0cb648;
+    float: right;
+    line-height: 150px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    gap: 80px;
+}
+
+.container {
+    background-color: rgb(165, 170, 168);
+    width: 550px;
+    height: 630px;
+    padding: 30px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    margin-top: 80px;
+}
+
+input[type="text"], input[type="email"], select, textarea {
+    background-color: rgb(247, 247, 234);
+    width: 100%;
+    padding: 15px;
+    border: none;
+    font-size: 12px;
+    border-bottom: 2px solid rgb(110, 106, 106);
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    background-color: rgb(73, 69, 69);
+    padding: 14px;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #CFF5E7;
+    color: black;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.map-container iframe {
+    width: 550px;
+    height: 630px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 80px;
+}
+
+@media (max-width: 1100px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .map-container iframe,
+    .container {
+        width: 90%;
+    }
+}
